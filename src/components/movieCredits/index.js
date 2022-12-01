@@ -24,7 +24,7 @@ export default function Credits(movie) {
                     <Grid item xs={3} display="flex"
                         justifyContent="center"
                         alignItems="center" style={{ padding: 10 }}>
-                        <Link to={`/person/${c.id}`} style={{ textDecoration: "none" }}>
+                        <Link to={`/actor/${c.id}`} style={{ textDecoration: "none" }}>
                             <Card sx={{ maxWidth: 400, width: 300 }} >
                                 <CardHeader
                                     title={c.name}

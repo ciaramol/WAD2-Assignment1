@@ -6,13 +6,13 @@ import MoviePage from "./pages/movieDetailsPage";
 import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
 import FavouriteMoviesPage from "./pages/favouriteMoviesPage";
 import PopularMoviesPage from "./pages/popularMoviesPage";
-import { Link } from 'react-router-dom';
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader';
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from 'react-query/devtools';
 import MoviesContextProvider from "./contexts/moviesContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage';
+import ActorDetailsPage from './pages/actorDetailsPage';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -39,6 +39,7 @@ const App = () => {
             <Route path="/movies/:id" element={<MoviePage />} />
             <Route path="/" element={<HomePage />} />
             <Route path="*" element={<Navigate to="/" />} />
+            <Route path="/actor/:id" element={<ActorDetailsPage/>}/>
           </Routes>
         </MoviesContextProvider>
       </BrowserRouter>
