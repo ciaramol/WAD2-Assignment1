@@ -73,6 +73,26 @@ export const getGenres = async () => {
     });
 };
 
+export const getCredits = (id) => {
+  return fetch(
+    `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+  )
+  .then( (response) => {
+    if (!response.ok) {
+      throw new Error(response.json().message);
+    }
+    return response.json();
+
+  })
+  .catch((error) => {
+    throw error
+ })
+    .then((json) => {
+      return json.cast;
+    });
+};
+
+
 export const getMovieImages = ({ queryKey }) => {
   const [, idPart] = queryKey;
   const { id } = idPart;

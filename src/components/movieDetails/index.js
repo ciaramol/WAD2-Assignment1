@@ -8,7 +8,10 @@ import NavigationIcon from "@mui/icons-material/Navigation";
 import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
-import MovieReviews from "../movieReviews"
+import Grid from "@mui/material/Grid";
+import MovieReviews from "../movieReviews";
+import Credits from "../movieCredits";
+
 
 
 const root = {
@@ -72,6 +75,11 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
           </li>
         ))}
       </Paper>
+      <Grid item display="flex"
+    justifyContent="center"
+    alignItems="center"> 
+      <Credits movie={movie} />
+      </Grid>
       <Fab
         color="secondary"
         variant="extended"
