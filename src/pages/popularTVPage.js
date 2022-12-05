@@ -21,7 +21,6 @@ const PopularTVPage = (props) => {
   // Redundant, but necessary to avoid app crashing.
   const favourites = TV.filter(m => m.favourite)
   localStorage.setItem('favourites', JSON.stringify(favourites))
-  const addToFavourites = (tvId) => true 
 
   return (
     <PageTemplate
