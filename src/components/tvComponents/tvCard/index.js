@@ -17,11 +17,25 @@ import Avatar from '@mui/material/Avatar';
 import { TVContext } from "../../../contexts/tvContext";
 
 export default function TVCard({ TV, action }) {
-   return (
+
+  // const { favouritesTV, addToFavouritesTV } = useContext(TVContext);
+
+  // if (favouritesTV.find((id) => id === TV.id)) {
+  //   TV.favouritesTV = true;
+  // } else {
+  //   TV.favouritesTV = false
+  // };
+
+  // const handleAddToFavouritesTV = (e) => {
+  //   e.preventDefault();
+  //   addToFavouritesTV(TV);
+  // };
+
+  return (
     <Card sx={{ maxWidth: 345 }}>
-       <CardHeader
+      <CardHeader
         avatar={
-          TV.favourite   ? (
+          TV.favourite ? (
             <Avatar sx={{ backgroundColor: 'red' }}>
               <FavoriteIcon />
             </Avatar>
@@ -59,13 +73,13 @@ export default function TVCard({ TV, action }) {
         </Grid>
       </CardContent>
       <CardActions disableSpacing>
-      {action(TV)}
-      <Link to={`/tv/${TV.id}`}>
-      <Button variant="outlined" size="medium" color="primary">
+        {action(TV)}
+        <Link to={`/tv/${TV.id}`}>
+          <Button variant="outlined" size="medium" color="primary">
             More Info ...
           </Button>
-          </Link>
-          </CardActions>
+        </Link>
+      </CardActions>
     </Card>
   );
 };

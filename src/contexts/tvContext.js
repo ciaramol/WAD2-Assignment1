@@ -3,35 +3,37 @@ import React, { useState } from "react";
 export const TVContext = React.createContext(null);
 
 const TVContextProvider = (props) => {
-    const [myReviews, setMyReviews] = useState({})
-    const [favourites, setFavourites] = useState([])
+    const [favouritesTV, setFavouritesTV] = useState([])
+    const [myReviews, setMyReviews] = useState([])
 
-    const addToFavourites = (TV) => {
-        let newFavourites = [...favourites];
-        if (!favourites.includes(TV.id)) {
-            newFavourites.push(TV.id);
+
+    const addToFavouritesTV = (TV) => {
+        console.log(TV.name);
+        let newFavouritesTV = [...favouritesTV];
+        if (!favouritesTV.includes(TV.id)) {
+            newFavouritesTV.push(TV.id);
         }
-        setFavourites(newFavourites);
+        setFavouritesTV(newFavouritesTV);
+    };
+
+    // We will use this function in a later section
+    const removeFromFavouritesTV = (TV) => {
+        setFavouritesTV(favouritesTV.filter(
+            (mId) => mId !== TV.id
+        ))
     };
 
     const addReview = (TV, review) => {
         setMyReviews({ ...myReviews, [TV.id]: review })
     };
 
-    // We will use this function in a later section
-    const removeFromFavourites = (TV) => {
-        setFavourites(favourites.filter(
-            (mId) => mId !== TV.id
-        ))
-    };
-
     return (
         <TVContext.Provider
             value={{
-                favourites,
-                addToFavourites,
-                removeFromFavourites,
-                addReview
+                favouritesTV,
+                addToFavouritesTV,
+                removeFromFavouritesTV,
+                addReview,
             }}
         >
             {props.children}
