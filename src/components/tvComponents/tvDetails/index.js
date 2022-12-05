@@ -10,6 +10,8 @@ import NavigationIcon from "@mui/icons-material/Navigation";
 import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
+import Credits from "../tvCredits";
+import Grid from "@mui/material/Grid";
 
 const root = {
   display: "flex",
@@ -76,6 +78,11 @@ const TVDetails = ({ TV }) => {  // Don't miss this!
           </li>
         ))}
       </Paper>
+      <Grid item display="flex"
+    justifyContent="center"
+    alignItems="center"> 
+      <Credits TV={TV} />
+      </Grid>
       <Fab
         color="secondary"
         variant="extended"
