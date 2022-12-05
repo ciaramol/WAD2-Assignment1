@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 const Header = (props) => {
   const title = props.title
   const navigate = useNavigate();
-  
+
   return (
     <Paper
       component="div"

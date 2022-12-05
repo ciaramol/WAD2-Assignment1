@@ -8,7 +8,7 @@ import AddToMustWatchIcon from '../components/cardIcons/addToMustWatch';
 
 const UpcomingMoviesPage = (props) => {
 
-  const {  data, error, isLoading, isError }  = useQuery('upcoming', getUpcomingMovies)
+  const { data, error, isLoading, isError } = useQuery('upcoming', getUpcomingMovies)
 
   if (isLoading) {
     return <Spinner />
@@ -16,7 +16,7 @@ const UpcomingMoviesPage = (props) => {
 
   if (isError) {
     return <h1>{error.message}</h1>
-  }  
+  }
   const movies = data.results;
 
   // Redundant, but necessary to avoid app crashing.
@@ -31,7 +31,7 @@ const UpcomingMoviesPage = (props) => {
         return <AddToMustWatchIcon movie={movie} />
       }}
     />
-);
+  );
 };
 
 export default UpcomingMoviesPage;

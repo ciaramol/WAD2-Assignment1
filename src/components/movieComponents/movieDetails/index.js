@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import Chip from "@mui/material/Chip";
 import Paper from "@mui/material/Paper";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
@@ -15,16 +15,16 @@ import Credits from "../movieCredits";
 
 
 const root = {
-    display: "flex",
-    justifyContent: "center",
-    flexWrap: "wrap",
-    listStyle: "none",
-    padding: 1.5,
-    margin: 0,
+  display: "flex",
+  justifyContent: "center",
+  flexWrap: "wrap",
+  listStyle: "none",
+  padding: 1.5,
+  margin: 0,
 };
 const chip = { margin: 0.5 };
 
-const MovieDetails = ({ movie }) => {  // Don't miss this!
+const MovieDetails = ({ movie }) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
@@ -37,8 +37,8 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
         {movie.overview}
       </Typography>
 
-      <Paper 
-        component="ul" 
+      <Paper
+        component="ul"
         sx={root}
       >
         <li>
@@ -62,8 +62,8 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
         />
         <Chip label={`Released: ${movie.release_date}`} />
       </Paper>
-      <Paper 
-        component="ul" 
+      <Paper
+        component="ul"
         sx={root}
       >
         <li>
@@ -76,17 +76,17 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
         ))}
       </Paper>
       <Grid item display="flex"
-    justifyContent="center"
-    alignItems="center"> 
-      <Credits movie={movie} />
+        justifyContent="center"
+        alignItems="center">
+        <Credits movie={movie} />
       </Grid>
       <Fab
         color="secondary"
         variant="extended"
         sx={{
-            position: "fixed",
-            bottom: 2,
-            right: 2
+          position: "fixed",
+          bottom: 2,
+          right: 2
         }}
       >
         <NavigationIcon />
@@ -95,7 +95,7 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
       <Fab
         color="secondary"
         variant="extended"
-        onClick={() =>setDrawerOpen(true)}
+        onClick={() => setDrawerOpen(true)}
         sx={{
           position: 'fixed',
           bottom: '1em',
@@ -112,4 +112,4 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
   );
 };
 
-export default  MovieDetails ;
+export default MovieDetails;

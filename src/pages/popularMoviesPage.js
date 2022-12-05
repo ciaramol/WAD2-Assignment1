@@ -7,7 +7,7 @@ import AddToFavouritesIcon from '../components/cardIcons/addToFavourites';
 
 const PopularMoviesPage = (props) => {
 
-  const {  data, error, isLoading, isError }  = useQuery('popular', getPopularMovies)
+  const { data, error, isLoading, isError } = useQuery('popular', getPopularMovies)
 
   if (isLoading) {
     return <Spinner />
@@ -15,10 +15,9 @@ const PopularMoviesPage = (props) => {
 
   if (isError) {
     return <h1>{error.message}</h1>
-  }  
+  }
   const movies = data.results;
 
-  // Redundant, but necessary to avoid app crashing.
   const favourites = movies.filter(m => m.favourite)
   localStorage.setItem('favourites', JSON.stringify(favourites))
 
@@ -30,7 +29,7 @@ const PopularMoviesPage = (props) => {
         return <AddToFavouritesIcon movie={movie} />
       }}
     />
-);
+  );
 };
 
 export default PopularMoviesPage;

@@ -10,7 +10,6 @@ import WriteReview from "../components/cardIcons/writeReview";
 const FavouriteMoviesPage = () => {
   const { favourites: movieIds } = useContext(MoviesContext);
 
-  // Create an array of queries and run in parallel.
   const favouriteMovieQueries = useQueries(
     movieIds.map((movieId) => {
       return {
@@ -19,7 +18,6 @@ const FavouriteMoviesPage = () => {
       };
     })
   );
-  // Check if any of the parallel queries is still loading.
   const isLoading = favouriteMovieQueries.find((m) => m.isLoading === true);
 
   if (isLoading) {

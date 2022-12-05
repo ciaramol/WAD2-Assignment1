@@ -31,8 +31,8 @@ const TVDetails = ({ TV }) => {  // Don't miss this!
       <Typography variant="h5" component="h3">
         Overview
       </Typography>
-      {TV.in_production ? <Chip label={`In Production`} icon={<CheckCircleOutlineIcon/>} color="primary" /> :
-        <Chip label={`Ended on ${TV.last_air_date}`} icon={<CancelIcon />} color="secondary"/>}
+      {TV.in_production ? <Chip label={`In Production`} icon={<CheckCircleOutlineIcon />} color="primary" /> :
+        <Chip label={`Ended on ${TV.last_air_date}`} icon={<CancelIcon />} color="secondary" />}
 
       <Typography variant="h6" component="p">
         {TV.overview}
@@ -79,9 +79,9 @@ const TVDetails = ({ TV }) => {  // Don't miss this!
         ))}
       </Paper>
       <Grid item display="flex"
-    justifyContent="center"
-    alignItems="center"> 
-      <Credits TV={TV} />
+        justifyContent="center"
+        alignItems="center">
+        <Credits TV={TV} />
       </Grid>
       <Fab
         color="secondary"
