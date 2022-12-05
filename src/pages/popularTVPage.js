@@ -1,13 +1,13 @@
 import React from "react";
-import { getTVShows } from "../api/tmdb-api";
+import { getPopularTVShows } from "../api/tmdb-api";
 import PageTemplate from '../components/tvComponents/templateTVListPage';
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 import AddToFavouritesIcon from '../components/cardIcons/addToFavourites'
 
-const TVHomePage = (props) => {
+const PopularTVPage = (props) => {
 
-  const {  data, error, isLoading, isError }  = useQuery('discover-tv', getTVShows)
+  const {  data, error, isLoading, isError }  = useQuery('discover-tv', getPopularTVShows)
 
   if (isLoading) {
     return <Spinner />
@@ -25,7 +25,7 @@ const TVHomePage = (props) => {
 
   return (
     <PageTemplate
-      title="Discover TV Shows"
+      title="Top Rated TV Shows"
       TV={TV}
       action={(TV) => {
         return <AddToFavouritesIcon TV={TV} />
@@ -33,4 +33,4 @@ const TVHomePage = (props) => {
     />
   );
 };
-export default TVHomePage;
+export default PopularTVPage;
