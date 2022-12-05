@@ -1,7 +1,7 @@
 //https://api.themoviedb.org/3/movie/upcoming?api_key=…your-key…&language=en-US&page=1
 import React from "react";
 import { getUpcomingMovies } from "../api/tmdb-api";
-import PageTemplate from '../components/templateMovieListPage';
+import PageTemplate from '../components/movieComponents/templateMovieListPage';
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 import AddToMustWatchIcon from '../components/cardIcons/addToMustWatch';

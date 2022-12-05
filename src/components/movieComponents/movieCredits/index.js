@@ -3,9 +3,9 @@ import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 import CardMedia from "@mui/material/CardMedia";
 import CardHeader from "@mui/material/CardHeader";
-import img from '../../images/film-poster-placeholder.png';
+import img from '../../../images/film-poster-placeholder.png';
 import { Link } from "react-router-dom";
-import { getCredits } from "../../api/tmdb-api";
+import { getCredits } from "../../../api/tmdb-api";
 
 export default function Credits(movie) {
     const [credits, setCredits] = useState([]);
